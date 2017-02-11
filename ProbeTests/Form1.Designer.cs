@@ -78,7 +78,7 @@
             this.successTextBox.Name = "successTextBox";
             this.successTextBox.Size = new System.Drawing.Size(902, 254);
             this.successTextBox.TabIndex = 4;
-            this.successTextBox.Text = "Queries which returned 404";
+            this.successTextBox.Text = "";
             // 
             // failTextBox
             // 
@@ -88,7 +88,7 @@
             this.failTextBox.Name = "failTextBox";
             this.failTextBox.Size = new System.Drawing.Size(902, 186);
             this.failTextBox.TabIndex = 5;
-            this.failTextBox.Text = "Queries which did not return 404. Csv format with actual reposnse.";
+            this.failTextBox.Text = "";
             // 
             // startButton
             // 
@@ -116,7 +116,7 @@
             this.exceptionPath.Name = "exceptionPath";
             this.exceptionPath.Size = new System.Drawing.Size(902, 186);
             this.exceptionPath.TabIndex = 8;
-            this.exceptionPath.Text = "Some Exception Occured while calling these. Try rerun of these paths separately.";
+            this.exceptionPath.Text = "";
             // 
             // Form1
             // 

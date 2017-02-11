@@ -24,6 +24,7 @@ namespace ProbeTests
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            Init();
             client = new HttpClient();
             client.BaseAddress = new Uri(urlTextBox.Text);
             var paths = File.ReadAllLines(fileTextBox.Text);
@@ -34,6 +35,14 @@ namespace ProbeTests
             {
                 Probe(path);
             }
+        }
+
+        private void Init()
+        {
+            progressBar1.Value = 1;
+            exceptionPath.Text = "Some Exception Occured while calling these. Try rerun of these paths separately.";
+            failTextBox.Text = "Queries which did not return 404. Csv format with actual reposnse.";
+            successTextBox.Text = "Queries which returned 404";
         }
 
         private async void Probe(string path)
@@ -54,7 +63,7 @@ namespace ProbeTests
             }
             catch (Exception ex)
             {
-                exceptionPath.AppendText("\n" + fullpath);
+                exceptionPath.AppendText("\n" + path);
                 //failTextBox.AppendText(ex.ToString());                
             }
             progressBar1.PerformStep();
