@@ -35,6 +35,7 @@
             this.successTextBox = new System.Windows.Forms.RichTextBox();
             this.failTextBox = new System.Windows.Forms.RichTextBox();
             this.startButton = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.SuspendLayout();
             // 
             // urlTextBox
@@ -98,11 +99,20 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
+            // progressBar1
+            // 
+            this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.progressBar1.Location = new System.Drawing.Point(664, 556);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(238, 23);
+            this.progressBar1.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 580);
+            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.failTextBox);
             this.Controls.Add(this.successTextBox);
@@ -126,6 +136,7 @@
         private System.Windows.Forms.RichTextBox successTextBox;
         private System.Windows.Forms.RichTextBox failTextBox;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }
 

@@ -26,6 +26,8 @@ namespace ProbeTests
         {
             client.BaseAddress = new Uri(urlTextBox.Text);
             var paths = File.ReadAllLines(fileTextBox.Text);
+            progressBar1.Maximum = paths.Length;
+            progressBar1.Step = 1;
 
             foreach (var path in paths)
             {
@@ -36,14 +38,17 @@ namespace ProbeTests
         private async void Probe(string path)
         {
             HttpResponseMessage response = await client.GetAsync(path);
+            string fullpath = client.BaseAddress + path;
             if (response.StatusCode == HttpStatusCode.NotFound)
             {
-                successTextBox.AppendText("\n" + path);
+                successTextBox.AppendText("\n" + fullpath);
             }
             else
             {
-                failTextBox.AppendText("\n" + path + ", " + response.StatusCode);
+                failTextBox.AppendText("\n" + fullpath + ", " + response.StatusCode);
             }
+
+            progressBar1.PerformStep();
         }
         
     }
