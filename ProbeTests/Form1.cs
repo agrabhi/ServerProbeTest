@@ -15,8 +15,8 @@ namespace ProbeTests
 {
     public partial class Form1 : Form
     {
-        static HttpClient client = new HttpClient();
-
+        static HttpClient client;
+        
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace ProbeTests
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            client = new HttpClient();
             client.BaseAddress = new Uri(urlTextBox.Text);
             var paths = File.ReadAllLines(fileTextBox.Text);
             progressBar1.Maximum = paths.Length;
@@ -37,10 +38,11 @@ namespace ProbeTests
 
         private async void Probe(string path)
         {
+            string fullpath = client.BaseAddress + path;
+
             try
             {
                 HttpResponseMessage response = await client.GetAsync(path);
-                string fullpath = client.BaseAddress + path;
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
                     successTextBox.AppendText("\n" + fullpath);
@@ -49,13 +51,13 @@ namespace ProbeTests
                 {
                     failTextBox.AppendText("\n" + fullpath + ", " + response.StatusCode);
                 }
-
-                progressBar1.PerformStep();
             }
             catch (Exception ex)
             {
-                successTextBox.AppendText(ex.ToString());                
+                exceptionPath.AppendText("\n" + fullpath);
+                //failTextBox.AppendText(ex.ToString());                
             }
+            progressBar1.PerformStep();
         }
         
     }

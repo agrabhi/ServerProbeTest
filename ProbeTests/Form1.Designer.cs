@@ -36,6 +36,7 @@
             this.failTextBox = new System.Windows.Forms.RichTextBox();
             this.startButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.exceptionPath = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // urlTextBox
@@ -73,7 +74,7 @@
             // successTextBox
             // 
             this.successTextBox.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.successTextBox.Location = new System.Drawing.Point(0, 326);
+            this.successTextBox.Location = new System.Drawing.Point(0, 573);
             this.successTextBox.Name = "successTextBox";
             this.successTextBox.Size = new System.Drawing.Size(902, 254);
             this.successTextBox.TabIndex = 4;
@@ -83,7 +84,7 @@
             // 
             this.failTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.failTextBox.Location = new System.Drawing.Point(0, 134);
+            this.failTextBox.Location = new System.Drawing.Point(0, 381);
             this.failTextBox.Name = "failTextBox";
             this.failTextBox.Size = new System.Drawing.Size(902, 186);
             this.failTextBox.TabIndex = 5;
@@ -102,16 +103,27 @@
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(664, 556);
+            this.progressBar1.Location = new System.Drawing.Point(664, 803);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(238, 23);
             this.progressBar1.TabIndex = 7;
+            // 
+            // exceptionPath
+            // 
+            this.exceptionPath.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.exceptionPath.Location = new System.Drawing.Point(0, 189);
+            this.exceptionPath.Name = "exceptionPath";
+            this.exceptionPath.Size = new System.Drawing.Size(902, 186);
+            this.exceptionPath.TabIndex = 8;
+            this.exceptionPath.Text = "Some Exception Occured while calling these. Try rerun of these paths separately.";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 580);
+            this.ClientSize = new System.Drawing.Size(902, 827);
+            this.Controls.Add(this.exceptionPath);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.failTextBox);
@@ -137,6 +149,7 @@
         private System.Windows.Forms.RichTextBox failTextBox;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.RichTextBox exceptionPath;
     }
 }
 
