@@ -37,18 +37,25 @@ namespace ProbeTests
 
         private async void Probe(string path)
         {
-            HttpResponseMessage response = await client.GetAsync(path);
-            string fullpath = client.BaseAddress + path;
-            if (response.StatusCode == HttpStatusCode.NotFound)
+            try
             {
-                successTextBox.AppendText("\n" + fullpath);
-            }
-            else
-            {
-                failTextBox.AppendText("\n" + fullpath + ", " + response.StatusCode);
-            }
+                HttpResponseMessage response = await client.GetAsync(path);
+                string fullpath = client.BaseAddress + path;
+                if (response.StatusCode == HttpStatusCode.NotFound)
+                {
+                    successTextBox.AppendText("\n" + fullpath);
+                }
+                else
+                {
+                    failTextBox.AppendText("\n" + fullpath + ", " + response.StatusCode);
+                }
 
-            progressBar1.PerformStep();
+                progressBar1.PerformStep();
+            }
+            catch (Exception ex)
+            {
+                successTextBox.AppendText(ex.ToString());                
+            }
         }
         
     }
