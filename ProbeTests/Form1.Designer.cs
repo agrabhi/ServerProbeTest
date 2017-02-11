@@ -76,7 +76,7 @@
             this.successTextBox.Name = "successTextBox";
             this.successTextBox.Size = new System.Drawing.Size(902, 254);
             this.successTextBox.TabIndex = 4;
-            this.successTextBox.Text = "Queries which returned non-404 (comma separated by response)";
+            this.successTextBox.Text = "Queries which returned 404";
             // 
             // failTextBox
             // 
@@ -86,7 +86,7 @@
             this.failTextBox.Name = "failTextBox";
             this.failTextBox.Size = new System.Drawing.Size(902, 186);
             this.failTextBox.TabIndex = 5;
-            this.failTextBox.Text = "Queries which returned other than 404";
+            this.failTextBox.Text = "Queries which did not return 404. Csv format with actual reposnse.";
             // 
             // startButton
             // 
