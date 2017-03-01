@@ -37,6 +37,8 @@
             this.startButton = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.exceptionPath = new System.Windows.Forms.RichTextBox();
+            this.queryStringTextBox = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // urlTextBox
@@ -92,7 +94,7 @@
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(269, 92);
+            this.startButton.Location = new System.Drawing.Point(249, 130);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 6;
@@ -118,17 +120,35 @@
             this.exceptionPath.TabIndex = 8;
             this.exceptionPath.Text = "";
             // 
+            // queryStrinTextBox
+            // 
+            this.queryStringTextBox.Location = new System.Drawing.Point(232, 95);
+            this.queryStringTextBox.Name = "queryStrinTextBox";
+            this.queryStringTextBox.Size = new System.Drawing.Size(393, 20);
+            this.queryStringTextBox.TabIndex = 9;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(32, 102);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Query String Params";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(902, 827);
+            this.Controls.Add(this.queryStringTextBox);
             this.Controls.Add(this.exceptionPath);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.failTextBox);
             this.Controls.Add(this.successTextBox);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.fileTextBox);
             this.Controls.Add(this.urlTextBox);
@@ -150,6 +170,8 @@
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.RichTextBox exceptionPath;
+        private System.Windows.Forms.TextBox queryStringTextBox;
+        private System.Windows.Forms.Label label3;
     }
 }
 

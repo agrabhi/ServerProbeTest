@@ -49,6 +49,11 @@ namespace ProbeTests
         {
             string fullpath = client.BaseAddress + path;
 
+            if (!String.IsNullOrEmpty(queryStringTextBox.Text))
+            {
+                fullpath += "?" + queryStringTextBox.Text;
+            }
+
             try
             {
                 HttpResponseMessage response = await client.GetAsync(path);
