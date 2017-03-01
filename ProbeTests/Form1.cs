@@ -39,7 +39,7 @@ namespace ProbeTests
 
         private void Init()
         {
-            progressBar1.Value = 1;
+            progressBar1.Value = 0;
             exceptionPath.Text = "Some Exception Occured while calling these. Try rerun of these paths separately.";
             failTextBox.Text = "Queries which did not return 404. Csv format with actual reposnse.";
             successTextBox.Text = "Queries which returned 404";
@@ -51,12 +51,12 @@ namespace ProbeTests
 
             if (!String.IsNullOrEmpty(queryStringTextBox.Text))
             {
-                fullpath += "?" + queryStringTextBox.Text;
+                fullpath += "?" + queryStringTextBox.Text.Trim();
             }
 
             try
             {
-                HttpResponseMessage response = await client.GetAsync(path);
+                HttpResponseMessage response = await client.GetAsync(fullpath);
                 if (response.StatusCode == HttpStatusCode.NotFound)
                 {
                     successTextBox.AppendText("\n" + fullpath);
